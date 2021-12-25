@@ -1,0 +1,740 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ResourceLanguages>ru-RU</ResourceLanguages>
+	<SatelliteResourceLanguages>ru-RU</SatelliteResourceLanguages> <!--эта строка убрала папки с неиспользуемыми языками-->
+	<NeutralLanguage>ru-RU</NeutralLanguage>
+    <Version>2.33</Version>
+    <Authors>Владислав Степанов</Authors>
+    <Company>Безымянная компания</Company>
+    <Product>AutoPixelArt</Product>
+    <Description>Автоматический строитель pixel-art'ов в Minecraft.</Description>
+    <Platforms>AnyCPU;x64</Platforms>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <AssemblyVersion>2.3.3.0</AssemblyVersion>
+    <FileVersion>2.3.3.0</FileVersion>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>AutoPixelArt_StrongNameKey.snk</AssemblyOriginatorKeyFile>
+    <DelaySign>false</DelaySign>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Optimize>false</Optimize>
+    <DefineConstants>TRACE</DefineConstants>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DocumentationFile></DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Optimize>false</Optimize>
+    <DefineConstants>TRACE</DefineConstants>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DocumentationFile />
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Optimize>true</Optimize>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="rendered_titles\**" />
+    <Compile Remove="Resources\rendered_titles\**" />
+    <EmbeddedResource Remove="rendered_titles\**" />
+    <EmbeddedResource Remove="Resources\rendered_titles\**" />
+    <None Remove="rendered_titles\**" />
+    <None Remove="Resources\rendered_titles\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\rendered_titles_en\acacia_log.png" />
+    <None Remove="Resources\rendered_titles_en\acacia_planks.png" />
+    <None Remove="Resources\rendered_titles_en\ancient_debris.png" />
+    <None Remove="Resources\rendered_titles_en\andesite.png" />
+    <None Remove="Resources\rendered_titles_en\barrier.png" />
+    <None Remove="Resources\rendered_titles_en\basalt.png" />
+    <None Remove="Resources\rendered_titles_en\bedrock.png" />
+    <None Remove="Resources\rendered_titles_en\birch_planks.png" />
+    <None Remove="Resources\rendered_titles_en\blackstone.png" />
+    <None Remove="Resources\rendered_titles_en\black_concrete.png" />
+    <None Remove="Resources\rendered_titles_en\black_concrete_powder.png" />
+    <None Remove="Resources\rendered_titles_en\black_terracotta.png" />
+    <None Remove="Resources\rendered_titles_en\black_wool.png" />
+    <None Remove="Resources\rendered_titles_en\blue_concrete.png" />
+    <None Remove="Resources\rendered_titles_en\blue_concrete_powder.png" />
+    <None Remove="Resources\rendered_titles_en\blue_terracotta.png" />
+    <None Remove="Resources\rendered_titles_en\blue_wool.png" />
+    <None Remove="Resources\rendered_titles_en\bone_block.png" />
+    <None Remove="Resources\rendered_titles_en\bricks.png" />
+    <None Remove="Resources\rendered_titles_en\brown_concrete.png" />
+    <None Remove="Resources\rendered_titles_en\brown_concrete_powder.png" />
+    <None Remove="Resources\rendered_titles_en\brown_mushroom_block.png" />
+    <None Remove="Resources\rendered_titles_en\brown_terracotta.png" />
+    <None Remove="Resources\rendered_titles_en\brown_wool.png" />
+    <None Remove="Resources\rendered_titles_en\chiseled_nether_bricks.png" />
+    <None Remove="Resources\rendered_titles_en\chiseled_polished_blackstone.png" />
+    <None Remove="Resources\rendered_titles_en\clay.png" />
+    <None Remove="Resources\rendered_titles_en\coal_block.png" />
+    <None Remove="Resources\rendered_titles_en\cobblestone.png" />
+    <None Remove="Resources\rendered_titles_en\cracked_polished_blackstone_bricks.png" />
+    <None Remove="Resources\rendered_titles_en\cracked_stone_bricks.png" />
+    <None Remove="Resources\rendered_titles_en\crimson_planks.png" />
+    <None Remove="Resources\rendered_titles_en\crying_obsidian.png" />
+    <None Remove="Resources\rendered_titles_en\cyan_concrete.png" />
+    <None Remove="Resources\rendered_titles_en\cyan_concrete_powder.png" />
+    <None Remove="Resources\rendered_titles_en\cyan_terracotta.png" />
+    <None Remove="Resources\rendered_titles_en\cyan_wool.png" />
+    <None Remove="Resources\rendered_titles_en\dark_oak_log.png" />
+    <None Remove="Resources\rendered_titles_en\dark_oak_planks.png" />
+    <None Remove="Resources\rendered_titles_en\dark_prismarine.png" />
+    <None Remove="Resources\rendered_titles_en\dead_brain_coral_block.png" />
+    <None Remove="Resources\rendered_titles_en\dead_fire_coral_block.png" />
+    <None Remove="Resources\rendered_titles_en\dead_horn_coral_block.png" />
+    <None Remove="Resources\rendered_titles_en\dead_tube_coral_block.png" />
+    <None Remove="Resources\rendered_titles_en\diamond_block.png" />
+    <None Remove="Resources\rendered_titles_en\diorite.png" />
+    <None Remove="Resources\rendered_titles_en\dirt.png" />
+    <None Remove="Resources\rendered_titles_en\emerald_block.png" />
+    <None Remove="Resources\rendered_titles_en\end_stone.png" />
+    <None Remove="Resources\rendered_titles_en\end_stone_bricks.png" />
+    <None Remove="Resources\rendered_titles_en\gilded_blackstone.png" />
+    <None Remove="Resources\rendered_titles_en\glowstone.png" />
+    <None Remove="Resources\rendered_titles_en\gold_block.png" />
+    <None Remove="Resources\rendered_titles_en\granite.png" />
+    <None Remove="Resources\rendered_titles_en\gravel.png" />
+    <None Remove="Resources\rendered_titles_en\gray_concrete.png" />
+    <None Remove="Resources\rendered_titles_en\gray_concrete_powder.png" />
+    <None Remove="Resources\rendered_titles_en\gray_terracotta.png" />
+    <None Remove="Resources\rendered_titles_en\gray_wool.png" />
+    <None Remove="Resources\rendered_titles_en\green_concrete.png" />
+    <None Remove="Resources\rendered_titles_en\green_concrete_powder.png" />
+    <None Remove="Resources\rendered_titles_en\green_terracotta.png" />
+    <None Remove="Resources\rendered_titles_en\green_wool.png" />
+    <None Remove="Resources\rendered_titles_en\honeycomb_block.png" />
+    <None Remove="Resources\rendered_titles_en\iron_block.png" />
+    <None Remove="Resources\rendered_titles_en\jungle_log.png" />
+    <None Remove="Resources\rendered_titles_en\jungle_planks.png" />
+    <None Remove="Resources\rendered_titles_en\lapis_block.png" />
+    <None Remove="Resources\rendered_titles_en\light_blue_concrete.png" />
+    <None Remove="Resources\rendered_titles_en\light_blue_concrete_powder.png" />
+    <None Remove="Resources\rendered_titles_en\light_blue_terracotta.png" />
+    <None Remove="Resources\rendered_titles_en\light_blue_wool.png" />
+    <None Remove="Resources\rendered_titles_en\light_gray_concrete.png" />
+    <None Remove="Resources\rendered_titles_en\light_gray_concrete_powder.png" />
+    <None Remove="Resources\rendered_titles_en\light_gray_terracotta.png" />
+    <None Remove="Resources\rendered_titles_en\light_gray_wool.png" />
+    <None Remove="Resources\rendered_titles_en\lime_concrete.png" />
+    <None Remove="Resources\rendered_titles_en\lime_concrete_powder.png" />
+    <None Remove="Resources\rendered_titles_en\lime_terracotta.png" />
+    <None Remove="Resources\rendered_titles_en\lime_wool.png" />
+    <None Remove="Resources\rendered_titles_en\lodestone.png" />
+    <None Remove="Resources\rendered_titles_en\magenta_concrete.png" />
+    <None Remove="Resources\rendered_titles_en\magenta_concrete_powder.png" />
+    <None Remove="Resources\rendered_titles_en\magenta_terracotta.png" />
+    <None Remove="Resources\rendered_titles_en\magenta_wool.png" />
+    <None Remove="Resources\rendered_titles_en\melon.png" />
+    <None Remove="Resources\rendered_titles_en\mossy_cobblestone.png" />
+    <None Remove="Resources\rendered_titles_en\mossy_stone_bricks.png" />
+    <None Remove="Resources\rendered_titles_en\mushroom_stem.png" />
+    <None Remove="Resources\rendered_titles_en\netherite_block.png" />
+    <None Remove="Resources\rendered_titles_en\netherrack.png" />
+    <None Remove="Resources\rendered_titles_en\nether_bricks.png" />
+    <None Remove="Resources\rendered_titles_en\nether_gold_ore.png" />
+    <None Remove="Resources\rendered_titles_en\nether_wart_block.png" />
+    <None Remove="Resources\rendered_titles_en\oak_log.png" />
+    <None Remove="Resources\rendered_titles_en\oak_planks.png" />
+    <None Remove="Resources\rendered_titles_en\obsidian.png" />
+    <None Remove="Resources\rendered_titles_en\orange_concrete.png" />
+    <None Remove="Resources\rendered_titles_en\orange_concrete_powder.png" />
+    <None Remove="Resources\rendered_titles_en\orange_terracotta.png" />
+    <None Remove="Resources\rendered_titles_en\orange_wool.png" />
+    <None Remove="Resources\rendered_titles_en\pink_concrete.png" />
+    <None Remove="Resources\rendered_titles_en\pink_concrete_powder.png" />
+    <None Remove="Resources\rendered_titles_en\pink_terracotta.png" />
+    <None Remove="Resources\rendered_titles_en\pink_wool.png" />
+    <None Remove="Resources\rendered_titles_en\polished_andesite.png" />
+    <None Remove="Resources\rendered_titles_en\polished_basalt.png" />
+    <None Remove="Resources\rendered_titles_en\polished_blackstone.png" />
+    <None Remove="Resources\rendered_titles_en\polished_blackstone_bricks.png" />
+    <None Remove="Resources\rendered_titles_en\polished_diorite.png" />
+    <None Remove="Resources\rendered_titles_en\polished_granite.png" />
+    <None Remove="Resources\rendered_titles_en\prismarine_bricks.png" />
+    <None Remove="Resources\rendered_titles_en\purple_concrete.png" />
+    <None Remove="Resources\rendered_titles_en\purple_concrete_powder.png" />
+    <None Remove="Resources\rendered_titles_en\purple_terracotta.png" />
+    <None Remove="Resources\rendered_titles_en\purple_wool.png" />
+    <None Remove="Resources\rendered_titles_en\purpur_block.png" />
+    <None Remove="Resources\rendered_titles_en\quartz_block.png" />
+    <None Remove="Resources\rendered_titles_en\redstone_block.png" />
+    <None Remove="Resources\rendered_titles_en\red_concrete.png" />
+    <None Remove="Resources\rendered_titles_en\red_concrete_powder.png" />
+    <None Remove="Resources\rendered_titles_en\red_nether_bricks.png" />
+    <None Remove="Resources\rendered_titles_en\red_sand.png" />
+    <None Remove="Resources\rendered_titles_en\red_sandstone.png" />
+    <None Remove="Resources\rendered_titles_en\red_terracotta.png" />
+    <None Remove="Resources\rendered_titles_en\red_wool.png" />
+    <None Remove="Resources\rendered_titles_en\respawn_anchor.png" />
+    <None Remove="Resources\rendered_titles_en\sand.png" />
+    <None Remove="Resources\rendered_titles_en\sandstone.png" />
+    <None Remove="Resources\rendered_titles_en\shroomlight.png" />
+    <None Remove="Resources\rendered_titles_en\smooth_red_sandstone.png" />
+    <None Remove="Resources\rendered_titles_en\smooth_sandstone.png" />
+    <None Remove="Resources\rendered_titles_en\smooth_stone.png" />
+    <None Remove="Resources\rendered_titles_en\soul_soil.png" />
+    <None Remove="Resources\rendered_titles_en\sponge.png" />
+    <None Remove="Resources\rendered_titles_en\spruce_log.png" />
+    <None Remove="Resources\rendered_titles_en\spruce_planks.png" />
+    <None Remove="Resources\rendered_titles_en\stone.png" />
+    <None Remove="Resources\rendered_titles_en\stone_bricks.png" />
+    <None Remove="Resources\rendered_titles_en\stripped_acacia_log.png" />
+    <None Remove="Resources\rendered_titles_en\stripped_birch_log.png" />
+    <None Remove="Resources\rendered_titles_en\stripped_crimson_stem.png" />
+    <None Remove="Resources\rendered_titles_en\stripped_dark_oak_log.png" />
+    <None Remove="Resources\rendered_titles_en\stripped_jungle_log.png" />
+    <None Remove="Resources\rendered_titles_en\stripped_oak_log.png" />
+    <None Remove="Resources\rendered_titles_en\stripped_spruce_log.png" />
+    <None Remove="Resources\rendered_titles_en\stripped_warped_stem.png" />
+    <None Remove="Resources\rendered_titles_en\terracotta.png" />
+    <None Remove="Resources\rendered_titles_en\warped_planks.png" />
+    <None Remove="Resources\rendered_titles_en\warped_wart_block.png" />
+    <None Remove="Resources\rendered_titles_en\white_concrete.png" />
+    <None Remove="Resources\rendered_titles_en\white_concrete_powder.png" />
+    <None Remove="Resources\rendered_titles_en\white_terracotta.png" />
+    <None Remove="Resources\rendered_titles_en\white_wool.png" />
+    <None Remove="Resources\rendered_titles_en\yellow_concrete.png" />
+    <None Remove="Resources\rendered_titles_en\yellow_concrete_powder.png" />
+    <None Remove="Resources\rendered_titles_en\yellow_terracotta.png" />
+    <None Remove="Resources\rendered_titles_en\yellow_wool.png" />
+    <None Remove="Resources\rendered_titles_ru\acacia_log.png" />
+    <None Remove="Resources\rendered_titles_ru\acacia_planks.png" />
+    <None Remove="Resources\rendered_titles_ru\ancient_debris.png" />
+    <None Remove="Resources\rendered_titles_ru\andesite.png" />
+    <None Remove="Resources\rendered_titles_ru\barrier.png" />
+    <None Remove="Resources\rendered_titles_ru\basalt.png" />
+    <None Remove="Resources\rendered_titles_ru\bedrock.png" />
+    <None Remove="Resources\rendered_titles_ru\birch_planks.png" />
+    <None Remove="Resources\rendered_titles_ru\blackstone.png" />
+    <None Remove="Resources\rendered_titles_ru\black_concrete.png" />
+    <None Remove="Resources\rendered_titles_ru\black_concrete_powder.png" />
+    <None Remove="Resources\rendered_titles_ru\black_terracotta.png" />
+    <None Remove="Resources\rendered_titles_ru\black_wool.png" />
+    <None Remove="Resources\rendered_titles_ru\blue_concrete.png" />
+    <None Remove="Resources\rendered_titles_ru\blue_concrete_powder.png" />
+    <None Remove="Resources\rendered_titles_ru\blue_terracotta.png" />
+    <None Remove="Resources\rendered_titles_ru\blue_wool.png" />
+    <None Remove="Resources\rendered_titles_ru\bone_block.png" />
+    <None Remove="Resources\rendered_titles_ru\bricks.png" />
+    <None Remove="Resources\rendered_titles_ru\brown_concrete.png" />
+    <None Remove="Resources\rendered_titles_ru\brown_concrete_powder.png" />
+    <None Remove="Resources\rendered_titles_ru\brown_mushroom_block.png" />
+    <None Remove="Resources\rendered_titles_ru\brown_terracotta.png" />
+    <None Remove="Resources\rendered_titles_ru\brown_wool.png" />
+    <None Remove="Resources\rendered_titles_ru\chiseled_nether_bricks.png" />
+    <None Remove="Resources\rendered_titles_ru\chiseled_polished_blackstone.png" />
+    <None Remove="Resources\rendered_titles_ru\clay.png" />
+    <None Remove="Resources\rendered_titles_ru\coal_block.png" />
+    <None Remove="Resources\rendered_titles_ru\cobblestone.png" />
+    <None Remove="Resources\rendered_titles_ru\cracked_polished_blackstone_bricks.png" />
+    <None Remove="Resources\rendered_titles_ru\cracked_stone_bricks.png" />
+    <None Remove="Resources\rendered_titles_ru\crimson_planks.png" />
+    <None Remove="Resources\rendered_titles_ru\crying_obsidian.png" />
+    <None Remove="Resources\rendered_titles_ru\cyan_concrete.png" />
+    <None Remove="Resources\rendered_titles_ru\cyan_concrete_powder.png" />
+    <None Remove="Resources\rendered_titles_ru\cyan_terracotta.png" />
+    <None Remove="Resources\rendered_titles_ru\cyan_wool.png" />
+    <None Remove="Resources\rendered_titles_ru\dark_oak_log.png" />
+    <None Remove="Resources\rendered_titles_ru\dark_oak_planks.png" />
+    <None Remove="Resources\rendered_titles_ru\dark_prismarine.png" />
+    <None Remove="Resources\rendered_titles_ru\dead_brain_coral_block.png" />
+    <None Remove="Resources\rendered_titles_ru\dead_fire_coral_block.png" />
+    <None Remove="Resources\rendered_titles_ru\dead_horn_coral_block.png" />
+    <None Remove="Resources\rendered_titles_ru\dead_tube_coral_block.png" />
+    <None Remove="Resources\rendered_titles_ru\diamond_block.png" />
+    <None Remove="Resources\rendered_titles_ru\diorite.png" />
+    <None Remove="Resources\rendered_titles_ru\dirt.png" />
+    <None Remove="Resources\rendered_titles_ru\emerald_block.png" />
+    <None Remove="Resources\rendered_titles_ru\end_stone.png" />
+    <None Remove="Resources\rendered_titles_ru\end_stone_bricks.png" />
+    <None Remove="Resources\rendered_titles_ru\gilded_blackstone.png" />
+    <None Remove="Resources\rendered_titles_ru\glowstone.png" />
+    <None Remove="Resources\rendered_titles_ru\gold_block.png" />
+    <None Remove="Resources\rendered_titles_ru\granite.png" />
+    <None Remove="Resources\rendered_titles_ru\gravel.png" />
+    <None Remove="Resources\rendered_titles_ru\gray_concrete.png" />
+    <None Remove="Resources\rendered_titles_ru\gray_concrete_powder.png" />
+    <None Remove="Resources\rendered_titles_ru\gray_terracotta.png" />
+    <None Remove="Resources\rendered_titles_ru\gray_wool.png" />
+    <None Remove="Resources\rendered_titles_ru\green_concrete.png" />
+    <None Remove="Resources\rendered_titles_ru\green_concrete_powder.png" />
+    <None Remove="Resources\rendered_titles_ru\green_terracotta.png" />
+    <None Remove="Resources\rendered_titles_ru\green_wool.png" />
+    <None Remove="Resources\rendered_titles_ru\honeycomb_block.png" />
+    <None Remove="Resources\rendered_titles_ru\iron_block.png" />
+    <None Remove="Resources\rendered_titles_ru\jungle_log.png" />
+    <None Remove="Resources\rendered_titles_ru\jungle_planks.png" />
+    <None Remove="Resources\rendered_titles_ru\lapis_block.png" />
+    <None Remove="Resources\rendered_titles_ru\light_blue_concrete.png" />
+    <None Remove="Resources\rendered_titles_ru\light_blue_concrete_powder.png" />
+    <None Remove="Resources\rendered_titles_ru\light_blue_terracotta.png" />
+    <None Remove="Resources\rendered_titles_ru\light_blue_wool.png" />
+    <None Remove="Resources\rendered_titles_ru\light_gray_concrete.png" />
+    <None Remove="Resources\rendered_titles_ru\light_gray_concrete_powder.png" />
+    <None Remove="Resources\rendered_titles_ru\light_gray_terracotta.png" />
+    <None Remove="Resources\rendered_titles_ru\light_gray_wool.png" />
+    <None Remove="Resources\rendered_titles_ru\lime_concrete.png" />
+    <None Remove="Resources\rendered_titles_ru\lime_concrete_powder.png" />
+    <None Remove="Resources\rendered_titles_ru\lime_terracotta.png" />
+    <None Remove="Resources\rendered_titles_ru\lime_wool.png" />
+    <None Remove="Resources\rendered_titles_ru\lodestone.png" />
+    <None Remove="Resources\rendered_titles_ru\magenta_concrete.png" />
+    <None Remove="Resources\rendered_titles_ru\magenta_concrete_powder.png" />
+    <None Remove="Resources\rendered_titles_ru\magenta_terracotta.png" />
+    <None Remove="Resources\rendered_titles_ru\magenta_wool.png" />
+    <None Remove="Resources\rendered_titles_ru\melon.png" />
+    <None Remove="Resources\rendered_titles_ru\mossy_cobblestone.png" />
+    <None Remove="Resources\rendered_titles_ru\mossy_stone_bricks.png" />
+    <None Remove="Resources\rendered_titles_ru\mushroom_stem.png" />
+    <None Remove="Resources\rendered_titles_ru\netherite_block.png" />
+    <None Remove="Resources\rendered_titles_ru\netherrack.png" />
+    <None Remove="Resources\rendered_titles_ru\nether_bricks.png" />
+    <None Remove="Resources\rendered_titles_ru\nether_gold_ore.png" />
+    <None Remove="Resources\rendered_titles_ru\nether_wart_block.png" />
+    <None Remove="Resources\rendered_titles_ru\oak_log.png" />
+    <None Remove="Resources\rendered_titles_ru\oak_planks.png" />
+    <None Remove="Resources\rendered_titles_ru\obsidian.png" />
+    <None Remove="Resources\rendered_titles_ru\orange_concrete.png" />
+    <None Remove="Resources\rendered_titles_ru\orange_concrete_powder.png" />
+    <None Remove="Resources\rendered_titles_ru\orange_terracotta.png" />
+    <None Remove="Resources\rendered_titles_ru\orange_wool.png" />
+    <None Remove="Resources\rendered_titles_ru\pink_concrete.png" />
+    <None Remove="Resources\rendered_titles_ru\pink_concrete_powder.png" />
+    <None Remove="Resources\rendered_titles_ru\pink_terracotta.png" />
+    <None Remove="Resources\rendered_titles_ru\pink_wool.png" />
+    <None Remove="Resources\rendered_titles_ru\polished_andesite.png" />
+    <None Remove="Resources\rendered_titles_ru\polished_basalt.png" />
+    <None Remove="Resources\rendered_titles_ru\polished_blackstone.png" />
+    <None Remove="Resources\rendered_titles_ru\polished_blackstone_bricks.png" />
+    <None Remove="Resources\rendered_titles_ru\polished_diorite.png" />
+    <None Remove="Resources\rendered_titles_ru\polished_granite.png" />
+    <None Remove="Resources\rendered_titles_ru\prismarine_bricks.png" />
+    <None Remove="Resources\rendered_titles_ru\purple_concrete.png" />
+    <None Remove="Resources\rendered_titles_ru\purple_concrete_powder.png" />
+    <None Remove="Resources\rendered_titles_ru\purple_terracotta.png" />
+    <None Remove="Resources\rendered_titles_ru\purple_wool.png" />
+    <None Remove="Resources\rendered_titles_ru\purpur_block.png" />
+    <None Remove="Resources\rendered_titles_ru\quartz_block.png" />
+    <None Remove="Resources\rendered_titles_ru\redstone_block.png" />
+    <None Remove="Resources\rendered_titles_ru\red_concrete.png" />
+    <None Remove="Resources\rendered_titles_ru\red_concrete_powder.png" />
+    <None Remove="Resources\rendered_titles_ru\red_nether_bricks.png" />
+    <None Remove="Resources\rendered_titles_ru\red_sand.png" />
+    <None Remove="Resources\rendered_titles_ru\red_sandstone.png" />
+    <None Remove="Resources\rendered_titles_ru\red_terracotta.png" />
+    <None Remove="Resources\rendered_titles_ru\red_wool.png" />
+    <None Remove="Resources\rendered_titles_ru\respawn_anchor.png" />
+    <None Remove="Resources\rendered_titles_ru\sand.png" />
+    <None Remove="Resources\rendered_titles_ru\sandstone.png" />
+    <None Remove="Resources\rendered_titles_ru\shroomlight.png" />
+    <None Remove="Resources\rendered_titles_ru\smooth_red_sandstone.png" />
+    <None Remove="Resources\rendered_titles_ru\smooth_sandstone.png" />
+    <None Remove="Resources\rendered_titles_ru\smooth_stone.png" />
+    <None Remove="Resources\rendered_titles_ru\soul_soil.png" />
+    <None Remove="Resources\rendered_titles_ru\sponge.png" />
+    <None Remove="Resources\rendered_titles_ru\spruce_log.png" />
+    <None Remove="Resources\rendered_titles_ru\spruce_planks.png" />
+    <None Remove="Resources\rendered_titles_ru\stone.png" />
+    <None Remove="Resources\rendered_titles_ru\stone_bricks.png" />
+    <None Remove="Resources\rendered_titles_ru\stripped_acacia_log.png" />
+    <None Remove="Resources\rendered_titles_ru\stripped_birch_log.png" />
+    <None Remove="Resources\rendered_titles_ru\stripped_crimson_stem.png" />
+    <None Remove="Resources\rendered_titles_ru\stripped_dark_oak_log.png" />
+    <None Remove="Resources\rendered_titles_ru\stripped_jungle_log.png" />
+    <None Remove="Resources\rendered_titles_ru\stripped_oak_log.png" />
+    <None Remove="Resources\rendered_titles_ru\stripped_spruce_log.png" />
+    <None Remove="Resources\rendered_titles_ru\stripped_warped_stem.png" />
+    <None Remove="Resources\rendered_titles_ru\terracotta.png" />
+    <None Remove="Resources\rendered_titles_ru\warped_planks.png" />
+    <None Remove="Resources\rendered_titles_ru\warped_wart_block.png" />
+    <None Remove="Resources\rendered_titles_ru\white_concrete.png" />
+    <None Remove="Resources\rendered_titles_ru\white_concrete_powder.png" />
+    <None Remove="Resources\rendered_titles_ru\white_terracotta.png" />
+    <None Remove="Resources\rendered_titles_ru\white_wool.png" />
+    <None Remove="Resources\rendered_titles_ru\yellow_concrete.png" />
+    <None Remove="Resources\rendered_titles_ru\yellow_concrete_powder.png" />
+    <None Remove="Resources\rendered_titles_ru\yellow_terracotta.png" />
+    <None Remove="Resources\rendered_titles_ru\yellow_wool.png" />
+    <None Remove="Resources\Инструкция.rtf" />
+    <None Remove="Инструкция.rtf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\rendered_titles_en\acacia_log.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\acacia_planks.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\ancient_debris.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\andesite.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\barrier.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\basalt.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\bedrock.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\birch_planks.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\blackstone.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\black_concrete.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\black_concrete_powder.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\black_terracotta.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\black_wool.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\blue_concrete.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\blue_concrete_powder.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\blue_terracotta.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\blue_wool.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\bone_block.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\bricks.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\brown_concrete.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\brown_concrete_powder.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\brown_mushroom_block.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\brown_terracotta.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\brown_wool.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\chiseled_nether_bricks.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\chiseled_polished_blackstone.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\clay.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\coal_block.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\cobblestone.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\cracked_polished_blackstone_bricks.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\cracked_stone_bricks.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\crimson_planks.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\crying_obsidian.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\cyan_concrete.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\cyan_concrete_powder.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\cyan_terracotta.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\cyan_wool.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\dark_oak_log.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\dark_oak_planks.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\dark_prismarine.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\dead_brain_coral_block.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\dead_fire_coral_block.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\dead_horn_coral_block.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\dead_tube_coral_block.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\diamond_block.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\diorite.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\dirt.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\emerald_block.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\end_stone.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\end_stone_bricks.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\gilded_blackstone.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\glowstone.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\gold_block.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\granite.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\gravel.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\gray_concrete.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\gray_concrete_powder.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\gray_terracotta.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\gray_wool.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\green_concrete.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\green_concrete_powder.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\green_terracotta.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\green_wool.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\honeycomb_block.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\iron_block.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\jungle_log.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\jungle_planks.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\lapis_block.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\light_blue_concrete.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\light_blue_concrete_powder.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\light_blue_terracotta.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\light_blue_wool.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\light_gray_concrete.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\light_gray_concrete_powder.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\light_gray_terracotta.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\light_gray_wool.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\lime_concrete.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\lime_concrete_powder.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\lime_terracotta.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\lime_wool.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\lodestone.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\magenta_concrete.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\magenta_concrete_powder.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\magenta_terracotta.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\magenta_wool.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\melon.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\mossy_cobblestone.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\mossy_stone_bricks.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\mushroom_stem.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\netherite_block.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\netherrack.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\nether_bricks.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\nether_gold_ore.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\nether_wart_block.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\oak_log.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\oak_planks.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\obsidian.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\orange_concrete.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\orange_concrete_powder.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\orange_terracotta.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\orange_wool.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\pink_concrete.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\pink_concrete_powder.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\pink_terracotta.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\pink_wool.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\polished_andesite.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\polished_basalt.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\polished_blackstone.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\polished_blackstone_bricks.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\polished_diorite.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\polished_granite.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\prismarine_bricks.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\purple_concrete.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\purple_concrete_powder.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\purple_terracotta.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\purple_wool.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\purpur_block.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\quartz_block.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\redstone_block.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\red_concrete.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\red_concrete_powder.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\red_nether_bricks.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\red_sand.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\red_sandstone.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\red_terracotta.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\red_wool.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\respawn_anchor.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\sand.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\sandstone.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\shroomlight.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\smooth_red_sandstone.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\smooth_sandstone.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\smooth_stone.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\soul_soil.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\sponge.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\spruce_log.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\spruce_planks.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\stone.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\stone_bricks.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\stripped_acacia_log.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\stripped_birch_log.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\stripped_crimson_stem.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\stripped_dark_oak_log.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\stripped_jungle_log.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\stripped_oak_log.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\stripped_spruce_log.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\stripped_warped_stem.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\terracotta.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\warped_planks.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\warped_wart_block.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\white_concrete.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\white_concrete_powder.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\white_terracotta.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\white_wool.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\yellow_concrete.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\yellow_concrete_powder.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\yellow_terracotta.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_en\yellow_wool.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\acacia_log.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\acacia_planks.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\ancient_debris.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\andesite.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\barrier.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\basalt.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\bedrock.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\birch_planks.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\blackstone.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\black_concrete.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\black_concrete_powder.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\black_terracotta.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\black_wool.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\blue_concrete.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\blue_concrete_powder.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\blue_terracotta.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\blue_wool.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\bone_block.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\bricks.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\brown_concrete.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\brown_concrete_powder.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\brown_mushroom_block.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\brown_terracotta.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\brown_wool.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\chiseled_nether_bricks.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\chiseled_polished_blackstone.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\clay.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\coal_block.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\cobblestone.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\cracked_polished_blackstone_bricks.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\cracked_stone_bricks.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\crimson_planks.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\crying_obsidian.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\cyan_concrete.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\cyan_concrete_powder.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\cyan_terracotta.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\cyan_wool.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\dark_oak_log.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\dark_oak_planks.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\dark_prismarine.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\dead_brain_coral_block.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\dead_fire_coral_block.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\dead_horn_coral_block.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\dead_tube_coral_block.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\diamond_block.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\diorite.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\dirt.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\emerald_block.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\end_stone.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\end_stone_bricks.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\gilded_blackstone.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\glowstone.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\gold_block.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\granite.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\gravel.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\gray_concrete.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\gray_concrete_powder.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\gray_terracotta.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\gray_wool.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\green_concrete.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\green_concrete_powder.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\green_terracotta.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\green_wool.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\honeycomb_block.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\iron_block.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\jungle_log.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\jungle_planks.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\lapis_block.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\light_blue_concrete.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\light_blue_concrete_powder.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\light_blue_terracotta.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\light_blue_wool.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\light_gray_concrete.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\light_gray_concrete_powder.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\light_gray_terracotta.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\light_gray_wool.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\lime_concrete.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\lime_concrete_powder.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\lime_terracotta.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\lime_wool.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\lodestone.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\magenta_concrete.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\magenta_concrete_powder.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\magenta_terracotta.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\magenta_wool.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\melon.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\mossy_cobblestone.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\mossy_stone_bricks.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\mushroom_stem.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\netherite_block.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\netherrack.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\nether_bricks.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\nether_gold_ore.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\nether_wart_block.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\oak_log.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\oak_planks.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\obsidian.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\orange_concrete.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\orange_concrete_powder.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\orange_terracotta.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\orange_wool.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\pink_concrete.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\pink_concrete_powder.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\pink_terracotta.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\pink_wool.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\polished_andesite.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\polished_basalt.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\polished_blackstone.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\polished_blackstone_bricks.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\polished_diorite.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\polished_granite.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\prismarine_bricks.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\purple_concrete.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\purple_concrete_powder.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\purple_terracotta.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\purple_wool.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\purpur_block.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\quartz_block.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\redstone_block.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\red_concrete.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\red_concrete_powder.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\red_nether_bricks.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\red_sand.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\red_sandstone.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\red_terracotta.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\red_wool.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\respawn_anchor.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\sand.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\sandstone.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\shroomlight.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\smooth_red_sandstone.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\smooth_sandstone.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\smooth_stone.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\soul_soil.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\sponge.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\spruce_log.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\spruce_planks.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\stone.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\stone_bricks.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\stripped_acacia_log.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\stripped_birch_log.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\stripped_crimson_stem.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\stripped_dark_oak_log.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\stripped_jungle_log.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\stripped_oak_log.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\stripped_spruce_log.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\stripped_warped_stem.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\terracotta.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\warped_planks.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\warped_wart_block.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\white_concrete.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\white_concrete_powder.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\white_terracotta.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\white_wool.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\yellow_concrete.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\yellow_concrete_powder.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\yellow_terracotta.png" />
+    <EmbeddedResource Include="Resources\rendered_titles_ru\yellow_wool.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="PInvoke.User32" Version="0.7.104" />
+    <PackageReference Include="SixLabors.ImageSharp" Version="1.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Strings.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Strings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+</Project>

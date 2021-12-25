@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "AutoPixelArt": {
+      "commandName": "Project",
+      "nativeDebugging": false
+    }
+  }
+}

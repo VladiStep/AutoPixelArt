@@ -1,0 +1,259 @@
+﻿<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="showPicAndPal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 29</value>
+  </data>
+  <data name="showPicAndPal.Text" xml:space="preserve">
+    <value>Preview</value>
+  </data>
+  <data name="openItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFUSURBVDhPlZK9SgNBFIXnCcQnkLyA4CPkHayFdBY22mqj
+        paVlxCKCoBaClUQLESNRC4OE4EKQrAbcYBKy62Z/ynHOzUwcMzuyDhzYGc795tw7y2ZXFEVLSZI8p2la
+        kkf5lywO1vZr/MH54LkhwlgQKsZxvC4AfHHjjM+tHOaDiKIKiqDqk0s6rbUJoCDCsy3t5kJh+bJFZrZ8
+        YGhh9ZjgSIeUUgVZPgHot2HfGwbTNu4aTf75UuW+50wVhSMAKwRwugO6aevokYohfQbDzj1/vdj8pffb
+        PfJREpUAEPSOvXoFBdSFBIDgmxIgTr3lEkRPYZMOwDwYDtzrXToATPVp06B9QwB8o4YAipjVr02dqx0T
+        gOHMGm3qNc8nL6EAX33XMP2l8cj7mQEOvMaJYbKpWy/zMAzf6BVE9ADF6CnLnCXMCn8mAUSMEiCYwX/k
+        +/48Y4x9AwxhsnXBwZZBAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="openItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 22</value>
+  </data>
+  <data name="openItem.Text" xml:space="preserve">
+    <value>&amp;Open picture</value>
+  </data>
+  <data name="toolStripSeparator.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 6</value>
+  </data>
+  <data name="exitItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 22</value>
+  </data>
+  <data name="exitItem.Text" xml:space="preserve">
+    <value>&amp;Exit</value>
+  </data>
+  <data name="fileItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 20</value>
+  </data>
+  <data name="fileItem.Text" xml:space="preserve">
+    <value>&amp;File</value>
+  </data>
+  <data name="openSettingsItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 22</value>
+  </data>
+  <data name="openSettingsItem.Text" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="resetSettingsItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 22</value>
+  </data>
+  <data name="resetSettingsItem.Text" xml:space="preserve">
+    <value>Reset the settings</value>
+  </data>
+  <data name="editItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 20</value>
+  </data>
+  <data name="editItem.Text" xml:space="preserve">
+    <value>&amp;Edit</value>
+  </data>
+  <data name="russianLangItem.Text" xml:space="preserve">
+    <value>Русский</value>
+  </data>
+  <data name="englishLangItem.Text" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="langItem.Text" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="openManualItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 22</value>
+  </data>
+  <data name="openManualItem.Text" xml:space="preserve">
+    <value>Manual</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>163, 6</value>
+  </data>
+  <data name="aboutItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 22</value>
+  </data>
+  <data name="aboutItem.Text" xml:space="preserve">
+    <value>&amp;About</value>
+  </data>
+  <data name="authorItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 22</value>
+  </data>
+  <data name="authorItem.Text" xml:space="preserve">
+    <value>E-mail the author</value>
+  </data>
+  <data name="helpItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 20</value>
+  </data>
+  <data name="helpItem.Text" xml:space="preserve">
+    <value>&amp;Help</value>
+  </data>
+  <data name="verBox.Items" xml:space="preserve">
+    <value>older than 1.8</value>
+  </data>
+  <data name="verBox.Text" xml:space="preserve">
+    <value>Choose version ...</value>
+  </data>
+  <data name="verText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 122</value>
+  </data>
+  <data name="verText.Text" xml:space="preserve">
+    <value>Palette version</value>
+  </data>
+  <data name="processingLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>290, 32</value>
+  </data>
+  <data name="processingLabel.Text" xml:space="preserve">
+    <value>Processing the picture...</value>
+  </data>
+  <data name="progressLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>386, 43</value>
+  </data>
+  <data name="progressLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 20</value>
+  </data>
+  <data name="progressLabel.Text" xml:space="preserve">
+    <value>Progress</value>
+  </data>
+  <data name="progressBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>266, 23</value>
+  </data>
+  <data name="blockCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 21</value>
+  </data>
+  <data name="blockCheckBox.Text" xml:space="preserve">
+    <value>Block keyboard and mouse</value>
+  </data>
+  <data name="autoMinCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 21</value>
+  </data>
+  <data name="autoMinCheckBox.Text" xml:space="preserve">
+    <value>Minimize Minecraft</value>
+  </data>
+  <data name="startStopButton.Text" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="widthLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 20</value>
+  </data>
+  <data name="widthLabel.Text" xml:space="preserve">
+    <value>Width - </value>
+  </data>
+  <data name="heightLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 20</value>
+  </data>
+  <data name="heightLabel.Text" xml:space="preserve">
+    <value>Height - </value>
+  </data>
+  <data name="colorsLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 20</value>
+  </data>
+  <data name="colorsLabel.Text" xml:space="preserve">
+    <value>Colors count - </value>
+  </data>
+  <data name="notifyIcon.BalloonTipTitle" xml:space="preserve">
+    <value>Countdown</value>
+  </data>
+  <data name="estimatedLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 20</value>
+  </data>
+  <data name="estimatedLabel.Text" xml:space="preserve">
+    <value>Would take minutes - </value>
+  </data>
+  <data name="showProgressCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>203, 21</value>
+  </data>
+  <data name="showProgressCheckBox.Text" xml:space="preserve">
+    <value>Show the process of building</value>
+  </data>
+  <data name="progressTimeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 17</value>
+  </data>
+  <data name="progressTimeLabel.Text" xml:space="preserve">
+    <value>Minutes remaining - 0</value>
+  </data>
+  <data name="continueButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 23</value>
+  </data>
+  <data name="continueButton.Text" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="continueCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>151, 21</value>
+  </data>
+  <data name="continueCheckBox.Text" xml:space="preserve">
+    <value>Continue from layer:</value>
+  </data>
+  <data name="currentLayerLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>408, 113</value>
+  </data>
+  <data name="currentLayerLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 17</value>
+  </data>
+  <data name="currentLayerLabel.Text" xml:space="preserve">
+    <value>Current layer - 0</value>
+  </data>
+</root>
