@@ -118,6 +118,12 @@ namespace AutoPixelArt
 				WindowState = FormWindowState.Normal;
 		}
 
+		public void SetTransparentColor(Color c)
+        {
+			TransparencyKey = BackColor = c;
+			previewPic.BackColor = c;
+        }
+
 		private void PreviewForm_FormClosed(object sender, FormClosedEventArgs e)
 		{
 			Application.OpenForms["PaletteForm"]?.Dispose();

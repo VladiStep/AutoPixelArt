@@ -38,6 +38,7 @@ namespace MainLibrary
 		private static readonly Brush blackBrush = new SolidBrush(Color.Black);
 		private static readonly Brush[] psBrushes = new SolidBrush[2] { new SolidBrush(Color.White), new SolidBrush(Color.FromArgb(204, 204, 204)) };
 		private static HashSet<Color> colors, colorsOrig;
+		private static Color unusedColor;
 		private static Dictionary<int, int[]> colorsAddr;
 		private static Dictionary<string, byte[]> paletteForVer;
 		private static MainForm mainForm => (MainForm)Application.OpenForms["MainForm"];
@@ -348,7 +349,7 @@ namespace MainLibrary
 
 				using (Graphics g = Graphics.FromImage(imgU))
 				{
-					g.Clear(Color.White);
+					g.Clear(Color.Transparent);
 					g.InterpolationMode = InterpolationMode.NearestNeighbor;
 					g.PixelOffsetMode = PixelOffsetMode.HighQuality;
 					g.DrawImage(img, 0, 0, imgU.Width, imgU.Height);
@@ -517,7 +518,7 @@ namespace MainLibrary
 			imgU = new Bitmap(img, imgWH[0] * scale, imgWH[1] * scale);
 
 			g = Graphics.FromImage(imgU);
-			g.Clear(Color.White);
+			g.Clear(Color.Transparent);
 			g.InterpolationMode = InterpolationMode.NearestNeighbor;
 			g.PixelOffsetMode = PixelOffsetMode.HighQuality;
 			g.DrawImage(img, 0, 0, imgU.Width, imgU.Height);
@@ -1018,6 +1019,26 @@ namespace MainLibrary
 			saveFileDialog.Dispose();
 		}
 
+		public static Color GetUnusedColor()
+		{
+			if (unusedColor.IsEmpty)
+			{
+				Random rand = new();
+				byte[] rgbArray = new byte[3];
+				rand.NextBytes(rgbArray);
+				Color c = Color.FromArgb(255, rgbArray[0], rgbArray[1], rgbArray[2]);
+
+				while (colors.Contains(c))
+				{
+					rand.NextBytes(rgbArray);
+					c = Color.FromArgb(255, rgbArray[0], rgbArray[1], rgbArray[2]);
+				}
+
+				unusedColor = c;
+			}
+
+			return unusedColor;
+		}
 		public static void ShowPreview()
 		{
 			previewForm?.Dispose();
@@ -1037,6 +1058,7 @@ namespace MainLibrary
 				)
 			};
 			previewForm.Location = previewXY;
+			previewForm.SetTransparentColor(GetUnusedColor());
 			previewForm.UpdatePicture(imgU);
 
 			previewForm.Show();
